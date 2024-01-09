@@ -8,11 +8,11 @@ const MenuContainer = () => {
     },
     {
       mode: "Player vs Player",
-      url: "/Player-vs-player",
+      url: "/player-vs-player",
     },
     {
       mode: "Rules",
-      url: "/Rules",
+      url: "/rules",
     },
   ];
 

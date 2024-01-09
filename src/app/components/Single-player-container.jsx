@@ -4,14 +4,20 @@ import PickingContainer from "./picking-container";
 import SelectedContainer from "./selected-container";
 
 const SinglePlayerContainer = () => {
-  const [totalScore, setTotalScore] = useState(0);
+  const [playerTotalScore, setPlayerTotalScore] = useState(0);
+  const [aiTotalScore, setAiTotalScore] = useState(0);
+  const [round, setRound] = useState(1);
   const [screenPage, setScreenPage] = useState(1);
   const [choice, setChoices] = useState(0);
 
   return (
     <div className="max-w-7xl m-auto py-10 px-20 flex flex-col gap-32">
       <div>
-        <ScoreBoard totalScore={totalScore} />
+        <ScoreBoard
+          playerTotalScore={playerTotalScore}
+          aiTotalScore={aiTotalScore}
+          round={round}
+        />
       </div>
       {screenPage === 1 ? (
         <PickingContainer
@@ -22,8 +28,12 @@ const SinglePlayerContainer = () => {
       ) : (
         <SelectedContainer
           choice={choice}
-          totalScore={totalScore}
-          setTotalScore={setTotalScore}
+          playerTotalScore={playerTotalScore}
+          setPlayerTotalScore={setPlayerTotalScore}
+          aiTotalScore={aiTotalScore}
+          setAiTotalScore={setAiTotalScore}
+          round={round}
+          setRound={setRound}
           screenPage={screenPage}
           setScreenPage={setScreenPage}
         />

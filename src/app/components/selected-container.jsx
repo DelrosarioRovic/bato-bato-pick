@@ -7,8 +7,12 @@ import Result from "./result";
 
 const SelectedContainer = ({
   choice,
-  totalScore,
-  setTotalScore,
+  playerTotalScore,
+  setPlayerTotalScore,
+  aiTotalScore,
+  setAiTotalScore,
+  round,
+  setRound,
   screenPage,
   setScreenPage,
 }) => {
@@ -38,6 +42,7 @@ const SelectedContainer = ({
   ];
 
   const ResultFunction = () => {
+    setRound(round + 1);
     if (choice === aiChoice) {
       return setWinner("tie");
     } else if (
@@ -45,9 +50,10 @@ const SelectedContainer = ({
       (choice === 1 && aiChoice === 2) ||
       (choice === 2 && aiChoice === 0)
     ) {
-      setTotalScore(totalScore + 1);
+      setPlayerTotalScore(playerTotalScore + 1);
       return setWinner("win");
     } else {
+      setAiTotalScore(aiTotalScore + 1);
       return setWinner("lose");
     }
   };
