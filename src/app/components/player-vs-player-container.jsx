@@ -15,6 +15,7 @@ const PlayerVsPlayerContainer = () => {
           round={round}
         />
       </div>
+      
     </div>
   );
 };

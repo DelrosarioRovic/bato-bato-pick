@@ -5,9 +5,11 @@ const Result = ({ result, screenPage, setScreenPage }) => {
 
   return (
     <div className="flex items-center flex-col gap-3">
-      <h1 className="text-white font-semibold text-3xl">YOU {result} </h1>
+      <h1 className="text-white font-semibold text-3xl text-shadow">
+        YOU {result}{" "}
+      </h1>
       <button
-        className="bg-white px-10 py-2 rounded-md text-xs"
+        className="bg-white px-10 py-2 rounded-md text-xs shadow-result"
         onClick={handlePlayAgain}
       >
         PLAY AGAIN

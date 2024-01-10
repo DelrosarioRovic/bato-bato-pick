@@ -4,6 +4,7 @@ import iconRock from "../assets/icon/icon-rock.svg";
 import iconScissors from "../assets/icon/icon-scissors.svg";
 import { useEffect, useState } from "react";
 import Result from "./result";
+import WinnerEffect from "./winning-effect";
 
 const SelectedContainer = ({
   choice,
@@ -76,10 +77,12 @@ const SelectedContainer = ({
   }, []);
 
   return (
-    <div className="flex items-center justify-evenly">
-      <div className="flex flex-col items-center gap-10">
+    <div className="flex items-center justify-evenly max-sm:gap-5">
+      <div className="flex flex-col items-center gap-10 relative">
+        {result && winner === "win" && <WinnerEffect />}
         <h1 className="text-white font-bold">YOU PICKED</h1>
         <Cards
+          size={"w-44 h-44 max-sm:w-32 max-sm:h-32"}
           id={choice}
           bgColor={
             choice === 0
@@ -105,10 +108,13 @@ const SelectedContainer = ({
         />
       )}
 
-      <div className="flex flex-col items-center gap-10">
+      <div className="flex flex-col items-center gap-10 relative">
+        {result && winner === "lose" && <WinnerEffect />}
+
         <h1 className="text-white font-bold">THE HOUSE PICKED</h1>
         {loadings ? (
           <Cards
+            size={"w-44 h-44 max-sm:w-32 max-sm:h-32"}
             id={aiChoice}
             bgColor={
               aiChoice === 0
@@ -126,7 +132,7 @@ const SelectedContainer = ({
             }
           />
         ) : (
-          <div className="bg-slate-950 w-28 h-28 rounded-full"></div>
+          <div className="bg-slate-950 opacity-20 w-36 h-36 rounded-full"></div>
         )}
       </div>
     </div>

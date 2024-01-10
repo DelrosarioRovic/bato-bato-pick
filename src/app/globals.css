@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.outside-shadow {
+  box-shadow: inset 0px -6px 0px rgba(0, 0, 0, 0.35),
+    0px 3px 9px rgb(6 2 15 / 76%);
+}
+
+.inside-shadow {
+  box-shadow: inset 0 6px 0px rgb(78 78 78 / 23%);
+}
+
+.shadow-result {
+  box-shadow: 0px 3px 9px rgb(6 2 15 / 76%);
+}
+
+.text-shadow {
+  text-shadow: 0px 3px 9px rgb(6 2 15 / 76%);
+}
+
+.bg-blur {
+  background-color: #0000005e;
+}

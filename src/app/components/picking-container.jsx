@@ -44,7 +44,12 @@ const PickingContainer = ({ setChoices, screenPage, setScreenPage }) => {
                   : "-bottom-10 -translate-x-1/2 left-1/2"
               }`}
             >
-              <Cards bgColor={cards.bgColor} icon={cards.icon} id={cards.id} />
+              <Cards
+                size={"w-32 h-32"}
+                bgColor={cards.bgColor}
+                icon={cards.icon}
+                id={cards.id}
+              />
             </div>
           ))}
           <Image alt="img" src={triangleImg} className="w-56" />

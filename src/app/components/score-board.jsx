@@ -11,7 +11,7 @@ const ScoreBoard = ({ playerTotalScore, aiTotalScore, round }) => {
         <p>SCISSORS</p>
       </div>
 
-      <div className="flex gap-5">
+      <div className="flex max-md:flex-col gap-5">
         <div className="flex flex-col items-center gap-3">
           <h3 className="text-white text-sm font-semibold">Player 1</h3>
           <div className="flex flex-col items-center bg-white px-8 py-1 rounded-md shadow-md">
