@@ -35,6 +35,7 @@ const PickingContainer = ({ setChoices, screenPage, setScreenPage }) => {
         <div className="relative">
           {cardsCollection.map((cards) => (
             <div
+              key={cards.id}
               onClick={() => handleSelectChoice(cards.id)}
               className={`z-10 absolute ${
                 cards.id === 0
